@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+printf "c, Play Country Playlist $s\n"
+printf "r, Play Rockers Playlist $s\n"
+printf "m, Play mix Playlist $s\n"
+
+read -r reply
+
+[ "$reply" = c  ]; 
+	mpv ~/.personal/Music/Country *.mp3 --shuffle --loop-playlist
+
+[ "$reply" = r ]; 
+	mpv ~/.personal/Music/Rockers *.mp3 --shuffle --loop-playlist
+
+[ "$reply" = m ]
+       mpv ~/.personal/Music/mix *.mp3  --shuffle --loop-playlist
+
+
