@@ -1,18 +1,44 @@
 #!/usr/bin/env sh
 
+# Author = Kyle Freidhof 
+
+# Created = 4/23/23
+
+# Script = Playlist
+
+# Gives user an error saying that if mpv is not installed
+if ! which mpv >> /dev/null; then
+       	echo "mpv is not installed"
+	exit
+
+else
+	continue
+
+fi 	
+
+
+
+# prints the playlist you want to play this can be changed to what you want 
+
 printf "c, Play Country Playlist $s\n"
 printf "r, Play Rockers Playlist $s\n"
 printf "m, Play mix Playlist $s\n"
 
+# What ever user replys with that gets played 
 read -r reply
 
 [ "$reply" = c  ]; 
 	mpv ~/.personal/Music/Country *.mp3 --shuffle --loop-playlist
+	exit
 
 [ "$reply" = r ]; 
 	mpv ~/.personal/Music/Rockers *.mp3 --shuffle --loop-playlist
+	exit
 
 [ "$reply" = m ]
        mpv ~/.personal/Music/mix *.mp3  --shuffle --loop-playlist
+       exit
+
+
 
 
